@@ -1,0 +1,227 @@
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      * {
+      box-sizing: border-box;
+      }
+      html, body {
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px; 
+      color: #666;
+      }
+      input, textarea { 
+      outline: none;
+      }
+      body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: #2e5b99;
+      }
+      h1 {
+      margin-top: 0;
+      font-weight: 500;
+      }
+      form {
+      position: relative;
+      width: 80%;
+      border-radius: 30px;
+      background: #fff;
+      }
+      .form-left-decoration,
+      .form-right-decoration {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 20px;
+      background: #2e5b99;
+      }
+      .form-left-decoration {
+      bottom: 60px;
+      left: -30px;
+      }
+      .form-right-decoration {
+      top: 60px;
+      right: -30px;
+      }
+      .form-left-decoration:before,
+      .form-left-decoration:after,
+      .form-right-decoration:before,
+      .form-right-decoration:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 30px;
+      background: #fff;
+      }
+      .form-left-decoration:before {
+      top: -20px;
+      }
+      .form-left-decoration:after {
+      top: 20px;
+      left: 10px;
+      }
+      .form-right-decoration:before {
+      top: -20px;
+      right: 0;
+      }
+      .form-right-decoration:after {
+      top: 20px;
+      right: 10px;
+      }
+      .circle {
+      position: absolute;
+      bottom: 80px;
+      left: -55px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      }
+      .form-inner {
+      padding: 40px;
+      }
+      .form-inner input,
+      .form-inner textarea {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 20px;
+      background: #d0dfe8;
+      }
+      .form-inner textarea {
+      resize: none;
+      }
+      button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 20px;
+      border: none;
+      border-bottom: 4px solid #2e5b99;
+      background: #2e5b99; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+      button:hover {
+      background: #2e5b99;
+      } 
+      @media (min-width: 568px) {
+      form {
+      width: 60%;
+	  margin-left: auto;
+		margin-right: auto;
+      }
+      }
+	  .center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	  }
+    </style>
+</head>
+
+<body>
+	
+	<form action="https://bacustomer360--commdev.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" class="decor">
+
+		<input type=hidden name="orgid" value="00D3L0000008l4J">
+		<input type=hidden name="retURL" value="https://amp-ba-bot.herokuapp.com/index.html">
+		<input type="hidden" id="origin" maxlength="80" name="origin" size="20"  value="BA.com"/>
+
+		<img src="BA_Ribbon.png" class="center"/>
+
+		<div class="form-left-decoration"></div>
+		<div class="form-right-decoration"></div>
+		<div class="circle"></div>
+		<div class="form-inner">
+		  <h1>Contact us</h1>
+		  <input  id="name" maxlength="80" name="name" size="20" type="text" placeholder="You Name"/>
+			<input  id="email" maxlength="80" name="email" size="20" type="text" placeholder="yourname@domain.com"/>
+			<input  id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="07700000000"/>
+			<input  id="subject" maxlength="80" name="subject" size="20" type="text" placeholder="Your issue"/>
+			<textarea name="description" tows="5" placeholder="Please provide a brief description of your issue"></textarea>
+			
+		  <input type="submit" name="submit">
+		</div>
+	  </form>
+
+    <style type='text/css'>
+      .embeddedServiceHelpButton .helpButton .uiButton {
+        background-color: #021B41;
+        font-family: "Arial", sans-serif;
+      }
+      .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid #021B41;
+      }
+    </style>
+    
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+      var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+    
+        //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+        //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+    
+        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+    
+        // Settings for Chat
+        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+          // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+          // Returns a valid button ID.
+        //};
+        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+    
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+    
+        embedded_svc.init(
+          'https://bacustomer360--crewapp.my.salesforce.com',
+          'https://crewapp-bac360.cs87.force.com',
+          gslbBaseURL,
+          '00D8E000000Fpkl',
+          'BA_Chatbot',
+          {
+            baseLiveAgentContentURL: 'https://c.la1-c1cs-lo2.salesforceliveagent.com/content',
+            deploymentId: '5724J000000XspT',
+            buttonId: '5734J000000XttT',
+            baseLiveAgentURL: 'https://d.la1-c1cs-lo2.salesforceliveagent.com/chat',
+            eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I4J000000TXcUUAW_17117567024',
+            isOfflineSupportEnabled: false
+          }
+        );
+      };
+    
+      if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://bacustomer360--crewapp.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+          initESW(null);
+        };
+        document.body.appendChild(s);
+      } else {
+        initESW('https://service.force.com');
+      }
+    </script>
+</body>
+</html>
